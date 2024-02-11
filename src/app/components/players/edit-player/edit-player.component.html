@@ -1,0 +1,48 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit Player</h1>
+  
+    <div class="row">
+        <div class="col-6">
+          <form #form="ngForm" (ngSubmit)="updatePlayer()" >
+  
+            <div class="mb-3">
+                <label for="id" class="form-label">Id</label>
+                <input type="text" class="form-control" id="id" readonly
+                 name="id" [(ngModel)]="playerDetails.id">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name"
+                 name="name" [(ngModel)]="playerDetails.name">
+              </div>
+              <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email"
+                  name="email" [(ngModel)]="playerDetails.email">
+              </div>
+              <div class="mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="number" class="form-control" id="phone"
+                  name="phone" [(ngModel)]="playerDetails.phone">   
+              </div>
+              <div class="mb-3">
+                  <label for="salary" class="form-label">Salary</label>
+                  <input type="number" class="form-control" id="salary"
+                  name="salary" [(ngModel)]="playerDetails.salary">   
+              </div>
+              <div class="mb-3">
+                  <label for="club" class="form-label">Club</label>
+                  <input type="club" class="form-control" id="club"
+                  name="club" [(ngModel)]="playerDetails.club">   
+              </div>
+  
+              <button  type="submit" class="btn btn-primary mx-1" >Save</button>
+              <button  type="button" class="btn btn-danger" (click)="deletePlayer(playerDetails.id)">Delete</button>
+  
+          </form>
+        </div>
+    </div>
+  
+  
+  
+  </div>

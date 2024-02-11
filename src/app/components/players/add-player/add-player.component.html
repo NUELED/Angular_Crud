@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <h1 class="mb-3">Add New Players</h1>
+
+  <div class="row">
+      <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="addPlayer()">
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name"
+               name="name" [(ngModel)]="addPlayerRequest.name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email"
+                name="email" [(ngModel)]="addPlayerRequest.email">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="number" class="form-control" id="phone"
+                name="phone" [(ngModel)]="addPlayerRequest.phone">   
+            </div>
+            <div class="mb-3">
+                <label for="salary" class="form-label">Salary</label>
+                <input type="number" class="form-control" id="salary"
+                name="salary" [(ngModel)]="addPlayerRequest.salary">   
+            </div>
+            <div class="mb-3">
+                <label for="club" class="form-label">Club</label>
+                <input type="club" class="form-control" id=""
+                name="club" [(ngModel)]="addPlayerRequest.club">   
+            </div>
+
+            <button  type="submit" class="btn btn-primary">Save</button>
+
+        </form>
+      </div>
+  </div>
+
+
+
+</div>

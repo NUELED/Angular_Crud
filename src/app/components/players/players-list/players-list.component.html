@@ -1,0 +1,29 @@
+<div class="container my-5"> 
+    <h3 class="mb-3" style="color:black;">Players</h3>
+
+    <table class="table table-stripped" *ngIf="players && players.length > 0">
+        <thead>
+            <tr style="color:red;">
+              <th >Id</th>
+              <th >Name</th>
+              <th >Email</th>
+              <th >Phone</th>
+              <th >Salary</th>
+              <th >Club</th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let player of players">
+              <td>{{player.id}}</td>
+              <td>{{player.name}}</td>
+              <td>{{player.email}}</td>
+              <td>{{player.phone}}</td>
+              <td>{{player.salary}}</td>
+              <td>{{player.club}}</td>
+              <td><a [routerLink]="['/player','edit', player.id]">View</a></td>
+            </tr>
+          </tbody>
+    </table>
+    <p *ngIf="!players || players.length <= 0">No players Found</p>
+</div>
