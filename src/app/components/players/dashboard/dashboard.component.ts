@@ -1,18 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../../../services/players.service';
-import { response } from 'express';
-import { Console } from 'console';
 import { Player } from '../../../models/player.model';
-import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-players-list',
-  templateUrl: './players-list.component.html',
-  styleUrl: './players-list.component.css'
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css'
 })
+export class DashboardComponent implements OnInit{
 
-export class PlayersListComponent implements OnInit {
-    
+
   players: Player[] = [];
   dtoptions:DataTables.Settings={}
   //dtTrigger:Subject<any>=new Subject<any>(); we are not using "dtTrigger".
@@ -39,6 +37,22 @@ export class PlayersListComponent implements OnInit {
            }
        })
       }
+  // users:any[]=[];
+  // constructor(private http: HttpClient) {
+
+  // }
+  // ngOnInit(): void {
+  //   this.getAllusers();
+  // }
+
+  // getAllusers() {
+  //   debugger;
+  //   this.http.get('https://localhost:7043/api/Account/signin').subscribe((res:any) => {
+  //     this.users = res.email;
+  //   } , error => {
+  //     alert("Error From API")
+  //   })
+  // }
+  
 
 }
-

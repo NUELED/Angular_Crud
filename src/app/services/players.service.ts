@@ -22,12 +22,12 @@ export class PlayersService {
   getAllPlayers2(): Observable<Player[]> {
     return this.http.get<Player[]>(this.baseApiUrl + 'api/Players');
   }
-
+  
   addPlayer(addPlayerRequest: Player): Observable<Player> {
     addPlayerRequest.id = '00000000-0000-0000-0000-000000000000';
     return this.http.post<Player>(this.baseApiUrl + 'api/Players/create-player', addPlayerRequest);
   }
-
+   
   getPlayer(id: string): Observable<Player> {
     return this.http.get<Player>(this.baseApiUrl + 'api/Players/' + id);   
   }
