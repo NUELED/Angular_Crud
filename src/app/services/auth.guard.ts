@@ -6,14 +6,24 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   const router = inject(Router);
  
-  const localData =  localStorage.getItem('userToken'); 
-  if(localData != null) {
-    return true;
-  } else {
-    router.navigateByUrl('/login')
-    return false;
-  }
+  if (typeof localStorage !== 'undefined') {
 
+      const localData =  localStorage.getItem('userToken'); 
+      if(localData != null)
+       {
+         return true;
+       } 
+      else 
+      {
+        router.navigateByUrl('/login')
+        return false;
+      }
+   } 
+   else 
+   {
+         console.error('localStorage is not available');
+        return false;
+   }
 
 
    // Retrieve user data from local storage

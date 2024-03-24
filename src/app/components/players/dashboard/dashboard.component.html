@@ -1,6 +1,6 @@
-<div class="container my-5"> 
+<div class="container my-5" > 
     <h3 class="mb-3" style="color:black;">Players</h3>
-
+  <div style="overflow-x: auto;">
     <table datatable [dtOptions]="dtoptions"  class="table table-bordered" *ngIf="players && players.length > 0">
         <thead class="bg-dark text-blue">
             <tr style="color:burlywood;">
@@ -25,5 +25,6 @@
             </tr>
           </tbody>
     </table>
+  </div>
     <p *ngIf="!players || players.length <= 0">No players Found</p>
 </div>
